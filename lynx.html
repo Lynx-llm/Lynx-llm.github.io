@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="LLaMAX">
+  <meta name="keywords" content="GPT-4, open-source, vision-language">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLaMAX</title>
+
+  <meta name="google-site-verification" content="6lbYN1vX7A4sD8SrVniq84UEKyEUSBgxeP7d3FjuuK0" />
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="icon" href="./static/images/2.jpeg">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="shortcut icon" href="path/to/favicon.ico" type="image/x-icon">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  </head>
+
+  <style>
+
+    #main{
+        position: relative;;
+        width: 1200px;
+    }
+
+    .box{
+        float: left;
+        padding: 15px 0 0 15px;
+        /*background-color: red;*/
+    }
+
+    .pic{
+        width: 500px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .pic img{
+        width: 500px;
+    }
+
+  </style>
+
+
+
+  <body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">LLaMAX</h1>
+          <h2 class="title is-2 publication-title">What Matters in Training a GPT4-Style Language Model with Multi-modal Inputs?</h2>
+          <div class="is-size-5">
+            <span class="author-block">
+                <a href="https://tsutikgiau.github.io/" style="color:#008AD7;font-weight:normal;">Yan Zeng<sup>*</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://junchen14.github.io/" style="color:#008AD7;font-weight:normal;">Hanbo Zhang<sup>*</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Jiani Zheng<sup>*</sup></a>,
+            </span>
+          </div>
+
+          <div class="is-size-5">
+            <span class="author-block">
+              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Jiangnan Xia</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Guoqiang Wei</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Yang Wei</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Yuchen Zhang</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Tao Kong</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Hang Li</a>,
+            </span>
+          </div>
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> ByteDance Research </span>
+            <!-- <span class="author-block"><b style="color:#F2A900; font-weight:normal">&#x25B6 </b>UCLA; </span> -->
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal Contribution </span>
+          </div>
+
+          <br>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2304.10592" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/Vision-CAIR/MiniGPT-4" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://huggingface.co/Vision-CAIR/MiniGPT-4" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-laugh"></i>
+                  </span>
+                  <span>Model</span>
+                  </a>
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" type="text/css" href="js/simple_style.css" />
+<script type="text/javascript" src="js/simple_swiper.js"></script>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+              Recent advances in large language models (LLMs) like GPT4 have demonstrated
+            extraordinary multi-modal abilities to follow open-ended instructions given images.
+            However, though most of them are built upon transformers, their design choices
+            (e.g. network structures, training data, training strategies) could strongly affect the
+            presented performance. Yet, unfortunately, such choices have not been extensively
+            discussed in the literature, which makes it hard to measure progress in this field. To
+            address this issue, in this paper, we conduct a systematic and comprehensive study
+            both quantitatively and qualitatively on training such models. We implement over
+            20 variants with controlled settings. Concretely, for network structures, we compare
+            different LLM backbones and model designs. For training data, we investigate the
+            impact of data and sampling strategies. For instructions, we explore the influence
+            of diversified prompts on the instruction-following ability of the trained models.
+            For benchmarks, we contribute the first, to our best knowledge, comprehensive
+            evaluation set including both image and video tasks through crowd-sourcing. Based
+            on our study, we present <b>LLaMAX</b>, which performs the most accurate multi-modal
+            understanding while keeping the best multi-modal generation ability compared to
+            existing open-sourced GPT4-style models. Codes and models are available at xxx.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">Model</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>MiniGPT-4 consists of a vision encoder with a pretrained ViT and Q-Former, a single linear projection layer, and an advanced Vicuna large language model. MiniGPT-4 only requires training the linear layer to align the visual features with the Vicuna.</b>:
+          </p>
+          <ul>
+            <li>It has two types of queries (latent queries and text queries) and outputs (semantic outputs and pixel-level outputs).</li>
+            <li>It uses a single text encoder for all text corpus, ranging from class concepts, referring phrases to image captions.</li>
+            <li>It decouples image and text encoder to accomadate cross-image tasks (e.g., image-text retrieval) and within-image tasks (e.g., segmentation and captioning).</li>
+
+          </ul>
+        </div>
+        <img id="model" width="50%" src="static/images/arch.jpeg">
+        <h3 class="subtitle has-text-centered">
+          <p style="font-family:Times New Roman"><b>The architecture of LLaMAX.</b></p>
+        </h3>
+        <br>
+        <br>
+
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3">Results</h2>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop"></div>
+</section>
+
+
+<script src="js/Underscore-min.js"></script>
+<script src="js/index.js"></script>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+    <div class="column">
+      <div class="content">
+        <h2 class="title is-4">results</h2>
+        <img src="static/images/result.jpeg">
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3">Cases</h2>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop"></div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+    <div class="column">
+      <div class="content">
+        <h2 class="title is-5">vqa_exp_cases</h2>
+        <img src="static/images/vqa_exp_cases.png">
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+    <div class="column">
+      <div class="content">
+        <h2 class="title is-5">mplug cases</h2>
+        <img src="static/images/mplug_exp_cases.png">
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+  <h2 class="title">BibTeX</h2>
+  <pre><code>
+
+@article{zhu2023minigpt,
+title={What Matters in Training a GPT4-Style Language Model with Multi-modal Inputs?},
+author={Zhu, Deyao and Chen, Jun and Shen, Xiaoqian and Li, Xiang and Elhoseiny, Mohamed},
+journal={arXiv preprint arXiv:2304.10592},
+year={2023}
+}
+</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/abs/2211.10526">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/ranery" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/ranery/ranery.github.io/tree/master/castling-vit">source code</a>
+              (adapted from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>) of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>
