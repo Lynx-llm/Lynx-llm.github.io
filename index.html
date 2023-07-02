@@ -2,10 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="LLaMAX">
+  <meta name="description" content="Lynx">
   <meta name="keywords" content="GPT-4, open-source, vision-language">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LLaMAX</title>
+  <title>Lynx</title>
 
   <meta name="google-site-verification" content="6lbYN1vX7A4sD8SrVniq84UEKyEUSBgxeP7d3FjuuK0" />
 
@@ -14,8 +14,7 @@
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="icon" href="./static/images/2.jpeg">
   <link rel="stylesheet" href="./static/css/index.css">
 
@@ -64,8 +63,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">LLaMAX</h1>
-          <h2 class="title is-2 publication-title">What Matters in Training a GPT4-Style Language Model with Multi-modal Inputs?</h2>
+          <h1 class="title is-1 publication-title">Lynx</h1>
+          <h2 class="title is-2 publication-title">What Matters in Training a GPT4-Style Language Model with Multimodal Inputs?</h2>
           <div class="is-size-5">
             <span class="author-block">
                 <a href="https://tsutikgiau.github.io/" style="color:#008AD7;font-weight:normal;">Yan Zeng<sup>*</sup></a>,
@@ -76,15 +75,15 @@
             <span class="author-block">
               <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Jiani Zheng<sup>*</sup></a>,
             </span>
-          </div>
-
-          <div class="is-size-5">
             <span class="author-block">
               <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Jiangnan Xia</a>,
             </span>
             <span class="author-block">
               <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Guoqiang Wei</a>,
             </span>
+          </div>
+
+          <div class="is-size-5">
             <span class="author-block">
               <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Yang Wei</a>,
             </span>
@@ -92,10 +91,7 @@
               <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Yuchen Zhang</a>,
             </span>
             <span class="author-block">
-              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Tao Kong</a>,
-            </span>
-            <span class="author-block">
-              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Hang Li</a>,
+              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Tao Kong</a>
             </span>
           </div>
           <br>
@@ -162,23 +158,23 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-              Recent advances in large language models (LLMs) like GPT4 have demonstrated
-            extraordinary multi-modal abilities to follow open-ended instructions given images.
-            However, though most of them are built upon transformers, their design choices
-            (e.g. network structures, training data, training strategies) could strongly affect the
-            presented performance. Yet, unfortunately, such choices have not been extensively
-            discussed in the literature, which makes it hard to measure progress in this field. To
-            address this issue, in this paper, we conduct a systematic and comprehensive study
-            both quantitatively and qualitatively on training such models. We implement over
-            20 variants with controlled settings. Concretely, for network structures, we compare
-            different LLM backbones and model designs. For training data, we investigate the
-            impact of data and sampling strategies. For instructions, we explore the influence
-            of diversified prompts on the instruction-following ability of the trained models.
-            For benchmarks, we contribute the first, to our best knowledge, comprehensive
-            evaluation set including both image and video tasks through crowd-sourcing. Based
-            on our study, we present <b>LLaMAX</b>, which performs the most accurate multi-modal
-            understanding while keeping the best multi-modal generation ability compared to
-            existing open-sourced GPT4-style models. Codes and models are available at xxx.
+            Recent advances in large language models (LLMs) like GPT4 have demonstrated
+          extraordinary multi-modal abilities to follow open-ended instructions given images.
+          However, though most of them are built upon transformers, their design choices
+          (e.g. network structures, training data, training strategies) could strongly affect the
+          presented performance. Yet, unfortunately, such choices have not been extensively
+          discussed in the literature, which makes it hard to measure progress in this field. To
+          address this issue, in this paper, we conduct a systematic and comprehensive study
+          both quantitatively and qualitatively on training such models. We implement over
+          20 variants with controlled settings. Concretely, for network structures, we compare
+          different LLM backbones and model designs. For training data, we investigate the
+          impact of data and sampling strategies. For instructions, we explore the influence
+          of diversified prompts on the instruction-following ability of the trained models.
+          For benchmarks, we contribute the first, to our best knowledge, comprehensive
+          evaluation set including both image and video tasks through crowd-sourcing. Based
+          on our study, we present <b>Lynx</b>, which performs the most accurate multi-modal
+          understanding while keeping the best multi-modal generation ability compared to
+          existing open-sourced GPT4-style models.
           </p>
         </div>
       </div>
@@ -193,18 +189,18 @@
         <h2 class="title is-3">Model</h2>
         <div class="content has-text-justified">
           <p>
-            <b>MiniGPT-4 consists of a vision encoder with a pretrained ViT and Q-Former, a single linear projection layer, and an advanced Vicuna large language model. MiniGPT-4 only requires training the linear layer to align the visual features with the Vicuna.</b>:
+            <b>Our model is based on prefix-tuning architecture: the vision tokens are directly concatenated with the text tokens to generate outputs auto-regressively.</b>:
           </p>
           <ul>
-            <li>It has two types of queries (latent queries and text queries) and outputs (semantic outputs and pixel-level outputs).</li>
-            <li>It uses a single text encoder for all text corpus, ranging from class concepts, referring phrases to image captions.</li>
-            <li>It decouples image and text encoder to accomadate cross-image tasks (e.g., image-text retrieval) and within-image tasks (e.g., segmentation and captioning).</li>
+<!--            <li>It has two types of queries (latent queries and text queries) and outputs (semantic outputs and pixel-level outputs).</li>-->
+<!--            <li>It uses a single text encoder for all text corpus, ranging from class concepts, referring phrases to image captions.</li>-->
+<!--            <li>It decouples image and text encoder to accomadate cross-image tasks (e.g., image-text retrieval) and within-image tasks (e.g., segmentation and captioning).</li>-->
 
           </ul>
         </div>
-        <img id="model" width="50%" src="static/images/arch.jpeg">
+        <img id="model" width="100%" src="static/images/lynx.png">
         <h3 class="subtitle has-text-centered">
-          <p style="font-family:Times New Roman"><b>The architecture of LLaMAX.</b></p>
+          <p style="font-family:Times New Roman"><b>The architecture of Lynx.</b></p>
         </h3>
         <br>
         <br>
@@ -292,8 +288,8 @@
 
 @article{zhu2023minigpt,
 title={What Matters in Training a GPT4-Style Language Model with Multi-modal Inputs?},
-author={Zhu, Deyao and Chen, Jun and Shen, Xiaoqian and Li, Xiang and Elhoseiny, Mohamed},
-journal={arXiv preprint arXiv:2304.10592},
+author={},
+journal={arXiv preprint arXiv:},
 year={2023}
 }
 </code></pre>
