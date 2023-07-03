@@ -52,6 +52,8 @@
         width: 500px;
     }
 
+    .div-height{height:200px}
+
   </style>
 
 
@@ -67,31 +69,31 @@
           <h2 class="title is-2 publication-title">What Matters in Training a GPT4-Style Language Model with Multimodal Inputs?</h2>
           <div class="is-size-5">
             <span class="author-block">
-                <a href="https://tsutikgiau.github.io/" style="color:#008AD7;font-weight:normal;">Yan Zeng<sup>*</sup></a>,
+                <a href="" style="color:#008AD7;font-weight:normal;">Yan Zeng<sup>*</sup></a>,
             </span>
             <span class="author-block">
-              <a href="https://junchen14.github.io/" style="color:#008AD7;font-weight:normal;">Hanbo Zhang<sup>*</sup></a>,
+              <a href="" style="color:#008AD7;font-weight:normal;">Hanbo Zhang<sup>*</sup></a>,
             </span>
             <span class="author-block">
-              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Jiani Zheng<sup>*</sup></a>,
+              <a href="" style="color:#008AD7;font-weight:normal;">Jiani Zheng<sup>*</sup></a>,
             </span>
             <span class="author-block">
-              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Jiangnan Xia</a>,
+              <a href="" style="color:#008AD7;font-weight:normal;">Jiangnan Xia</a>,
             </span>
             <span class="author-block">
-              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Guoqiang Wei</a>,
+              <a href="" style="color:#008AD7;font-weight:normal;">Guoqiang Wei</a>,
             </span>
           </div>
 
           <div class="is-size-5">
             <span class="author-block">
-              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Yang Wei</a>,
+              <a href="" style="color:#008AD7;font-weight:normal;">Yang Wei</a>,
             </span>
             <span class="author-block">
-              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Yuchen Zhang</a>,
+              <a href="" style="color:#008AD7;font-weight:normal;">Yuchen Zhang</a>,
             </span>
             <span class="author-block">
-              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Tao Kong</a>
+              <a href="" style="color:#008AD7;font-weight:normal;">Tao Kong</a>
             </span>
           </div>
           <br>
@@ -110,7 +112,7 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2304.10592" target="_blank"
+                <a href="https://arxiv.org/abs/" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -120,7 +122,7 @@
               </span>
 
               <span class="link-block">
-                <a href="https://github.com/Vision-CAIR/MiniGPT-4" target="_blank"
+                <a href="https://github.com/" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -130,7 +132,7 @@
               </span>
 
               <span class="link-block">
-                <a href="https://huggingface.co/Vision-CAIR/MiniGPT-4" target="_blank"
+                <a href="https://huggingface.co/" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fa fa-laugh"></i>
@@ -189,17 +191,11 @@
         <h2 class="title is-3">Model</h2>
         <div class="content has-text-justified">
           <p>
-            <b>Our model is based on prefix-tuning architecture: the vision tokens are directly concatenated with the text tokens to generate outputs auto-regressively.</b>:
+            Our model is based on prefix-tuning architecture: the vision tokens are directly concatenated with the text tokens to generate outputs auto-regressively.
           </p>
-          <ul>
-<!--            <li>It has two types of queries (latent queries and text queries) and outputs (semantic outputs and pixel-level outputs).</li>-->
-<!--            <li>It uses a single text encoder for all text corpus, ranging from class concepts, referring phrases to image captions.</li>-->
-<!--            <li>It decouples image and text encoder to accomadate cross-image tasks (e.g., image-text retrieval) and within-image tasks (e.g., segmentation and captioning).</li>-->
-
-          </ul>
         </div>
         <img id="model" width="100%" src="static/images/lynx.png">
-        <h3 class="subtitle has-text-centered">
+        <h3 class="has-text-centered">
           <p style="font-family:Times New Roman"><b>The architecture of Lynx.</b></p>
         </h3>
         <br>
@@ -232,8 +228,33 @@
 
     <div class="column">
       <div class="content">
-        <h2 class="title is-4">results</h2>
-        <img src="static/images/result.jpeg">
+        <img id="model" width="100%" src="static/images/result_1.png">
+        <h5>
+          <p style="font-family:Times New Roman">Comparison of existing open-sourced multi-modal LLMs and quantitative evaluation results (accuracy) on our Open-VQA image test set.</p>
+        </h5>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+    <div class="columns">
+      <div class="content">
+        <img id="model" width="80%" src="static/images/result_2.png">
+        <h5>
+          <p style="font-family:Times New Roman">Comparison of existing open-sourced multi-modal LLMs on the Open-VQA video benchmark.</p>
+        </h5>
+      </div>
+      <div class="content">
+        <img id="model" width="80%" src="static/images/result_3.png">
+        <h5>
+          <p style="font-family:Times New Roman">Comparison of human-evaluation performance on OwlEval. Scores are averaged over the number of questions.</p>
+        </h5>
       </div>
     </div>
 
@@ -257,8 +278,10 @@
 
     <div class="column">
       <div class="content">
-        <h2 class="title is-5">vqa_exp_cases</h2>
-        <img src="static/images/vqa_exp_cases.png">
+        <img src="static/images/bench_cases.png">
+        <h5>
+          <p style="font-family:Times New Roman"> Examples of our test set. (a) Open-VQA benchmark to validate the accuracy of visual understanding; (b) OwlEval to evaluate the quality of language generation.</p>
+        </h5>
       </div>
     </div>
 
@@ -272,8 +295,30 @@
 
     <div class="column">
       <div class="content">
-        <h2 class="title is-5">mplug cases</h2>
+        <img src="static/images/vqa_exp_cases.png">
+        <h5>
+          <p style="font-family:Times New Roman">Qualitative results on our Open-VQA benchmark of different models. We choose Instruct-BLIP and mPLUG-Owl because they perform best on the Open-VQA benchmark and OwlEval benchmark in all baseline algorithms.</p>
+        </h5>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+    <div class="column">
+      <div class="content">
         <img src="static/images/mplug_exp_cases.png">
+        <h5>
+          <p style="font-family:Times New Roman"> Qualitative results on OwlEval benchmark of different models. We choose InstructBLIP
+            and mPLUG-Owl because they perform best on the Open-VQA benchmark and OwlEval benchmark
+            in all baseline algorithms.
+          </p>
+        </h5>
       </div>
     </div>
 
@@ -286,7 +331,7 @@
   <h2 class="title">BibTeX</h2>
   <pre><code>
 
-@article{zhu2023minigpt,
+@article{,
 title={What Matters in Training a GPT4-Style Language Model with Multi-modal Inputs?},
 author={},
 journal={arXiv preprint arXiv:},
