@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description" content="Lynx">
-  <meta name="keywords" content="GPT-4, open-source, vision-language">
+  <meta name="keywords" content="Lynx vision-language">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lynx</title>
 
@@ -63,49 +63,48 @@
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <img width="20%" src="static/images/logo_plus.png">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Lynx</h1>
+          <img id="" width="12%" src="static/images/logo_plus.png">
           <h2 class="title is-2 publication-title">What Matters in Training a GPT4-Style Language Model with Multimodal Inputs?</h2>
           <div class="is-size-5">
             <span class="author-block">
-                <a href="" style="color:#008AD7;font-weight:normal;">Yan Zeng<sup>*</sup></a>,
+              Yan Zeng<sup>*</sup></a>,
             </span>
             <span class="author-block">
-              <a href="" style="color:#008AD7;font-weight:normal;">Hanbo Zhang<sup>*</sup></a>,
+              Hanbo Zhang<sup>*</sup></a>,
             </span>
             <span class="author-block">
-              <a href="" style="color:#008AD7;font-weight:normal;">Jiani Zheng<sup>*</sup></a>,
+              Jiani Zheng<sup>*</sup></a>,
             </span>
             <span class="author-block">
-              <a href="" style="color:#008AD7;font-weight:normal;">Jiangnan Xia</a>,
+              Jiangnan Xia</a>,
             </span>
             <span class="author-block">
-              <a href="" style="color:#008AD7;font-weight:normal;">Guoqiang Wei</a>,
+              Guoqiang Wei</a>,
             </span>
           </div>
 
           <div class="is-size-5">
             <span class="author-block">
-              <a href="" style="color:#008AD7;font-weight:normal;">Yang Wei</a>,
+              Yang Wei</a>,
             </span>
             <span class="author-block">
-              <a href="" style="color:#008AD7;font-weight:normal;">Yuchen Zhang</a>,
+              Yuchen Zhang</a>,
             </span>
             <span class="author-block">
-              <a href="" style="color:#008AD7;font-weight:normal;">Tao Kong</a>
+              Tao Kong</a>
             </span>
           </div>
           <br>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> ByteDance Research </span>
-            <!-- <span class="author-block"><b style="color:#F2A900; font-weight:normal">&#x25B6 </b>UCLA; </span> -->
-          </div>
-
-          <div class="is-size-5 publication-authors">
+            <span class="author-block">ByteDance Research &nbsp;&nbsp;</span>
             <span class="author-block"><sup>*</sup>Equal Contribution </span>
           </div>
+
+<!--          <div class="is-size-5 publication-authors">-->
+<!--            <span class="author-block"><sup>*</sup>Equal Contribution </span>-->
+<!--          </div>-->
 
           <br>
 
@@ -185,247 +184,90 @@
     <br>
     <br>
 
-    <br>
-    <br>
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
         <h2 class="title is-3">Model</h2>
         <div class="content has-text-justified">
           <p>
-            Our model is based on prefix-tuning architecture: the vision tokens are directly concatenated with the text tokens to generate outputs auto-regressively.
-          </p>
+            Our model takes simultaneously vision and language as inputs to generate text responses following the input
+            instructions. Concretely, vision inputs are first processed by a vision encoder to get a sequence of vision
+            tokens. After that, vision tokens are fused with instruction tokens for multi-modal tasks. In our model,
+            we directly concatenate the projected vision tokens and instruction tokens as the input of LLMs, which can
+            then be processed by the decoder-only LLMs naturally. We call this structure "prefix-finetuning" (PT)          </p>
         </div>
         <img id="model" width="100%" src="static/images/lynx.png">
         <h3 class="has-text-centered">
           <p style="font-family:Times New Roman"><b>The architecture of Lynx.</b></p>
         </h3>
-        <br>
-        <br>
 
       </div>
     </div>
-    <br>
-    <br>
   </div>
 </section>
 
 <section class="section">
   <div class="columns is-centered has-text-centered">
-    <div class="column is-six-fifths">
       <h2 class="title is-3">Results</h2>
-    </div>
   </div>
-
-  <div class="container is-max-desktop"></div>
-</section>
-
-
-<script src="js/Underscore-min.js"></script>
-<script src="js/index.js"></script>
-
-<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-
     <div class="column">
       <div class="content">
         <img id="model" width="100%" src="static/images/result_1.png">
-        <h5>
-          <p style="font-family:Times New Roman">Comparison of existing open-sourced multi-modal LLMs and quantitative evaluation results (accuracy) on our Open-VQA image test set.</p>
-        </h5>
       </div>
     </div>
-
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-
+    <div class="columns is-centered">
     <div class="column">
       <div class="content">
-        <img id="model" width="40%" src="static/images/result_2.png">
-        <h5>
-          <p style="font-family:Times New Roman">Comparison of existing open-sourced multi-modal LLMs on the Open-VQA video benchmark.</p>
-        </h5>
+        <img id="model" width="90%" src="static/images/result_all.png">
+        <div class="content has-text-justified">
+          <p>We first compare existing open-sourced multi-modal LLMs and quantitative evaluation results on the Open-VQA
+            image benchmark, and then (a) benchmark them on videos; (b) benchmark them on MME dataset; (c) show human
+            evaluation results, and (d) conduct an in-depth ablation study to investigate the impact of different
+            components.</p>
+        </div>
       </div>
     </div>
-
     </div>
   </div>
 </section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered ">
-
-    <div class="column">
-      <div class="content">
-        <img id="model" width="40%" src="static/images/result_3.png">
-        <h5>
-          <p style="font-family:Times New Roman">Comparison of human-evaluation performance on OwlEval. Scores are averaged over the number of questions.</p>
-        </h5>
-      </div>
-    </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-
-    <div class="column">
-      <div class="content">
-        <img id="model" width="40%" src="static/images/mme.png">
-        <h5>
-          <p style="font-family:Times New Roman">Comparison on MME benchmark.</p>
-        </h5>
-      </div>
-    </div>
-
-    </div>
-  </div>
-</section>
-
 
 <section class="section">
   <div class="columns is-centered has-text-centered">
-    <div class="column is-six-fifths">
-      <h2 class="title is-3">Cases</h2>
-    </div>
+      <h2 class="title is-3">Demos</h2>
   </div>
 
-  <div class="container is-max-desktop"></div>
-</section>
-
-<!--<section class="section">-->
-<!--  <div class="container is-max-desktop">-->
-<!--    <div class="columns is-centered">-->
-
-<!--    <div class="column">-->
-<!--      <div class="content">-->
-<!--        <img src="static/images/bench_cases.png">-->
-<!--        <h5>-->
-<!--          <p style="font-family:Times New Roman"> Examples of our test set. (a) Open-VQA benchmark to validate the accuracy of visual understanding; (b) OwlEval to evaluate the quality of language generation.</p>-->
-<!--        </h5>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
-
-<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-
     <div class="column">
       <div class="content">
         <img src="static/images/vqa_exp_cases.png">
-        <h5>
-          <p style="font-family:Times New Roman">Qualitative results on our Open-VQA benchmark of different models. We choose Instruct-BLIP and mPLUG-Owl because they perform best on the Open-VQA benchmark and OwlEval benchmark in all baseline algorithms.</p>
-        </h5>
       </div>
     </div>
-
     </div>
   </div>
-</section>
 
-<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-
     <div class="column">
       <div class="content">
         <img src="static/images/mplug_exp_cases.png">
-        <h5>
-          <p style="font-family:Times New Roman"> Qualitative results on OwlEval benchmark of different models. We choose InstructBLIP
-            and mPLUG-Owl because they perform best on the Open-VQA benchmark and OwlEval benchmark
-            in all baseline algorithms.
-          </p>
-        </h5>
       </div>
     </div>
+    </div>
+  </div>
 
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <div class="column">
+      <div class="content">
+        <img width="100%" src="static/images/more_video_vqa_cases.png">
+      </div>
+    </div>
     </div>
   </div>
 </section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-
-    <div class="column">
-      <div class="content">
-        <img src="static/images/more_image_vqa_cases.png">
-        <h5>
-          <p style="font-family:Times New Roman">More cases on our Open-VQA image benchmark.
-          </p>
-        </h5>
-      </div>
-    </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-
-    <div class="column">
-      <div class="content">
-        <img src="static/images/more_video_vqa_cases.png">
-        <h5>
-          <p style="font-family:Times New Roman">More cases on our Open-VQA video benchmark.
-          </p>
-        </h5>
-      </div>
-    </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-
-    <div class="column">
-      <div class="content">
-        <img src="static/images/more_owleval_cases1.png">
-        <h5>
-          <p style="font-family:Times New Roman">More cases on our OwlEval benchmark.
-          </p>
-        </h5>
-      </div>
-    </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-
-    <div class="column">
-      <div class="content">
-        <img src="static/images/more_owleval_cases2.png">
-        <h5>
-          <p style="font-family:Times New Roman">More cases on our OwlEval benchmark.
-          </p>
-        </h5>
-      </div>
-    </div>
-
-    </div>
-  </div>
 </section>
 
 <section class="section" id="BibTeX">
@@ -434,10 +276,10 @@
   <pre><code>
 
 @article{,
-title={What Matters in Training a GPT4-Style Language Model with Multi-modal Inputs?},
-author={},
-journal={arXiv preprint arXiv:},
-year={2023}
+  title={What Matters in Training a GPT4-Style Language Model with Multi-modal Inputs?},
+  author={},
+  journal={arXiv preprint arXiv:},
+  year={2023}
 }
 </code></pre>
   </div>
@@ -445,37 +287,16 @@ year={2023}
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="https://arxiv.org/abs/2211.10526">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
-      <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/ranery/ranery.github.io/tree/master/castling-vit">source code</a>
-              (adapted from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>) of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            The website template was adapted from <a
+              href="https://github.com/ranery/ranery.github.io/tree/master/castling-vit">nerfies</a>.
           </p>
         </div>
       </div>
-    </div>
   </div>
 </footer>
-
 </body>
 
 </html>
