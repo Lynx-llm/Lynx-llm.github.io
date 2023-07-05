@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="icon" href="./static/images/2.jpeg">
+  <link rel="icon" href="./static/images/logo.png">
   <link rel="stylesheet" href="./static/css/index.css">
 
   <link rel="shortcut icon" href="path/to/favicon.ico" type="image/x-icon">
@@ -160,23 +160,22 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent advances in large language models (LLMs) like GPT4 have demonstrated
-          extraordinary multi-modal abilities to follow open-ended instructions given images.
-          However, though most of them are built upon transformers, their design choices
-          (e.g. network structures, training data, training strategies) could strongly affect the
-          presented performance. Yet, unfortunately, such choices have not been extensively
-          discussed in the literature, which makes it hard to measure progress in this field. To
-          address this issue, in this paper, we conduct a systematic and comprehensive study
-          both quantitatively and qualitatively on training such models. We implement over
-          20 variants with controlled settings. Concretely, for network structures, we compare
-          different LLM backbones and model designs. For training data, we investigate the
-          impact of data and sampling strategies. For instructions, we explore the influence
-          of diversified prompts on the instruction-following ability of the trained models.
-          For benchmarks, we contribute the first, to our best knowledge, comprehensive
-          evaluation set including both image and video tasks through crowd-sourcing. Based
-          on our study, we present <b>Lynx</b>, which performs the most accurate multi-modal
-          understanding while keeping the best multi-modal generation ability compared to
-          existing open-sourced GPT4-style models.
+            Recent advancements in Large Language Models (LLMs) such as GPT4 have dis-
+          played exceptional multi-modal capabilities in following open-ended instructions
+          given images. However, the performance of these models heavily relies on design
+          choices such as network structures, training data, and training strategies, and these
+          choices have not been extensively discussed in the literature, making it difficult to
+          quantify progress in this field. To address this issue, this paper presents a systematic
+          and comprehensive study, quantitatively and qualitatively, on training such models.
+          We implement over 20 variants with controlled settings. Concretely, for network
+          structures, we compare different LLM backbones and model designs. For training
+          data, we investigate the impact of data and sampling strategies. For instructions,
+          we explore the influence of diversified prompts on the instruction-following ability
+          of the trained models. For benchmarks, we contribute the first, to our best knowl-
+          edge, comprehensive evaluation set including both image and video tasks through
+            crowd-sourcing. Based on our findings, we present <b>Lynx</b>, which performs the most
+          accurate multi-modal understanding while keeping the best multi-modal generation
+          ability compared to existing open-sourced GPT4-style models.
           </p>
         </div>
       </div>
@@ -228,7 +227,7 @@
 
     <div class="column">
       <div class="content">
-        <img id="model" width="100%" src="static/images/result_1.png">
+        <img id="model" width="90%" src="static/images/result_1.png">
         <h5>
           <p style="font-family:Times New Roman">Comparison of existing open-sourced multi-modal LLMs and quantitative evaluation results (accuracy) on our Open-VQA image test set.</p>
         </h5>
@@ -241,17 +240,28 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
+    <div class="columns is-centered has-text-centered">
 
-    <div class="columns">
+    <div class="column">
       <div class="content">
-        <img id="model" width="80%" src="static/images/result_2.png">
+        <img id="model" width="40%" src="static/images/result_2.png">
         <h5>
           <p style="font-family:Times New Roman">Comparison of existing open-sourced multi-modal LLMs on the Open-VQA video benchmark.</p>
         </h5>
       </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered ">
+
+    <div class="column">
       <div class="content">
-        <img id="model" width="80%" src="static/images/result_3.png">
+        <img id="model" width="40%" src="static/images/result_3.png">
         <h5>
           <p style="font-family:Times New Roman">Comparison of human-evaluation performance on OwlEval. Scores are averaged over the number of questions.</p>
         </h5>
@@ -261,6 +271,7 @@
     </div>
   </div>
 </section>
+
 
 <section class="section">
   <div class="columns is-centered has-text-centered">
@@ -348,7 +359,7 @@ year={2023}
          href="https://arxiv.org/abs/2211.10526">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/ranery" class="external-link" disabled>
+      <a class="icon-link" href="" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
